@@ -1,0 +1,7 @@
+.products-container__product-box__img {
+    height: 100px;
+    max-width: 135px;
+}
+.products-container__product-box__model {
+    font-size: 13px;
+}

@@ -1,0 +1,11 @@
+.button-container__secondary {
+    border: 1px solid #d8d8d8;
+    background-color: #fff;
+    color: #f35252;
+}
+
+.button-container__primary {
+    border: none;
+    color: #fff;
+    background-color: #01B9FF;
+}
