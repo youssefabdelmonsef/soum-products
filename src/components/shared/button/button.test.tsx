@@ -1,24 +1,19 @@
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { Provider } from "react-redux";
-import { QueryClient, QueryClientProvider } from 'react-query';
 import { ButtonComponent } from './button';
 import { store } from '../../../redux/store';
-import { shallow } from 'enzyme';
 
 describe("Products container screen", () => {
     let container: HTMLElement, getByText: any;
-    const queryClient = new QueryClient();
     let handleClick = 0;
 
     beforeEach(() => {
         ({ container, getByText } = render(
-            <QueryClientProvider client={queryClient}>
-                <Provider store={store}>
-                    <div id='ButtonComponent'>
-                        <ButtonComponent type='primary' text='button text' onClick={() => ++handleClick} />
-                    </div>
-                </Provider>
-            </QueryClientProvider>
+            <Provider store={store}>
+                <div id='ButtonComponent'>
+                    <ButtonComponent type='primary' text='button text' onClick={() => ++handleClick} />
+                </div>
+            </Provider>
         ))
 
     });
@@ -35,7 +30,7 @@ describe("Products container screen", () => {
 
     it("should fire click event onClick", () => {
         const button = getByText(/button text/i);
-        button.dispatchEvent(new MouseEvent('click', {bubbles: true}));
+        button.dispatchEvent(new MouseEvent('click', { bubbles: true }));
         expect(handleClick).toEqual(1);
     });
 
