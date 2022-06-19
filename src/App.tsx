@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Provider } from 'react-redux';
 import './App.css';
+import './styles/styles.css';
+import { SoumHeader } from './components/core/soum-header';
+import { FilterComponent } from './components/shared/filter/filter';
+import { store } from "./redux/store";
+import { ProductsComponent } from './containers/products/products';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 function App() {
+  const queryClient = new QueryClient();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        <div className="App">
+          <header className="App-header">
+            <SoumHeader></SoumHeader>
+          </header>
+          <div className="body-container">
+            <FilterComponent />
+            <ProductsComponent />
+          </div>
+        </div>
+      </Provider>
+    </QueryClientProvider>
   );
 }
 

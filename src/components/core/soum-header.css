@@ -1,0 +1,53 @@
+.soum-header__upper-header {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.soum-header__lower-header__men-logo {
+    position: absolute;
+    bottom: -3px;
+    right: 5px;
+}
+
+.soum-header__lower-header__title {
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 27px;
+    color: #31cdcd;
+}
+
+.soum-header__lower-header__sub-title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 23px;
+}
+
+.lower-header__text {
+    position: absolute;
+    bottom: 8px;
+}
+
+.soum-header__language {
+ display: inline-block;   
+ cursor: pointer;
+}
+
+.soum-header__lower-header__men-logo-img {
+    width: 90px;
+    height: 100px;
+}
+
+@media only screen and (min-width: 1025px) {
+    .soum-header__lower-header__title {
+        font-size: 28px;
+    }
+    
+    .soum-header__lower-header__sub-title {
+        font-size: 16px;
+    }
+    .soum-header__lower-header__men-logo-img {
+        width: 120px;
+        height: 110px;
+    }
+}
